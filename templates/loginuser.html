@@ -1,0 +1,41 @@
+<html>
+<head></head>
+<body>
+
+
+{% if username %}
+
+   Welcome {{username}}!<a href = "/Logout"></a>
+
+ {% else %}  
+
+  Welcome Guest! <a href = "/Login"></a>
+
+  {% endif %}
+  <br>
+
+<table border="1">
+
+    <tr>
+        <th>Product ID </th>
+        <th>Name </th> 
+        <th>Image </th>
+        <th>Action </th>
+    </tr>
+    
+
+    {% for items in records %}
+
+    <tr>
+       <td>{{item[0]}}</td>
+       <td>{{item[1]}}</td>
+       <td><img src="{{item[2]}}" alt="Image" height="100" width="70"/></td>
+       <td>{{item[4]}}</td>       
+       <td>BUY</td>    
+    </tr>
+
+    {% endfor %}
+
+</table>
+</body>
+</html>    
